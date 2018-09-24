@@ -31,55 +31,52 @@ public class MainActivity extends AppCompatActivity {
         button_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String userText = button_1.getText().toString();
-                text_player.setText(userText);
-                setImageSystem();
+                buttonOnClick(button_1);
             }
         });
 
         button_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String userText = button_2.getText().toString();
-                text_player.setText(userText);
-                setImageSystem();
+                buttonOnClick(button_2);
             }
         });
         button_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String userText = button_3.getText().toString();
-                text_player.setText(userText);
-                setImageSystem();
+                buttonOnClick(button_3);
             }
         });
         button_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String userText = button_4.getText().toString();
-                text_player.setText(userText);
-                setImageSystem();
+                buttonOnClick(button_4);
             }
         });
         button_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String userText = button_5.getText().toString();
-                text_player.setText(userText);
-                setImageSystem();
+                buttonOnClick(button_5);
             }
         });
         button_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String userText = button_6.getText().toString();
-                text_player.setText(userText);
-                setImageSystem();
+                buttonOnClick(button_6);
             }
         });
     }
+
+    private void buttonOnClick(Button button) {
+        String userText = button.getText().toString();
+        text_player.setText(String.format("Your selection is: %s", userText));
+        setImageSystem();
+       // button.setVisibility(View.INVISIBLE);
+    }
+
     public void setImageSystem() {
         int number = random.nextInt(6)+1;
+        systemImageView.setVisibility(View.VISIBLE);
         switch (number) {
             case 1:
                 systemImageView.setImageResource(R.drawable.dice_one);
